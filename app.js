@@ -21,6 +21,12 @@ function getParam(name) {
 }
 
 // ── Date formatting ──────────────────────────────────────────────
+function readTime(body) {
+  const words = body.replace(/<[^>]*>/g, '').trim().split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words / 200));
+  return mins + ' min read';
+}
+
 function formatDate(iso) {
   if (!iso) return '';
   const d = new Date(iso + 'T00:00:00');
@@ -81,7 +87,7 @@ function initIndex() {
     <a class="post-card" href="post.html?id=${p.id}">
       ${p.cover ? `<div class="post-cover-wrap"><img class="post-cover" src="${p.cover}" alt=""></div>` : ''}
       <div class="post-card-body">
-        <div class="post-meta">${formatDate(p.date)}</div>
+        <div class="post-meta">${formatDate(p.date)} &nbsp;&middot;&nbsp; ${readTime(p.body)}</div>
         <h2 class="post-title">${p.title}</h2>
         <p class="post-excerpt">${excerpt(p.body)}</p>
         <span class="post-read-more">Read &rarr;</span>
@@ -108,7 +114,7 @@ function initPost() {
 
   wrap.innerHTML = `
     ${post.cover ? `<div class="post-cover-wrap"><img class="post-cover" src="${post.cover}" alt=""></div>` : ''}
-    <div class="post-meta">${formatDate(post.date)}</div>
+    <div class="post-meta">${formatDate(post.date)} &nbsp;&middot;&nbsp; ${readTime(post.body)}</div>
     <h1>${post.title}</h1>
     <hr class="post-divider">
     <div class="post-body">${renderBody(post.body)}</div>
