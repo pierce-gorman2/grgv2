@@ -83,6 +83,29 @@ function initIndex() {
     return;
   }
 
+  const searchInput = document.getElementById('search');
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim().toLowerCase();
+      renderPosts(q ? posts.filter(p =>
+        p.title.toLowerCase().includes(q) ||
+        p.body.toLowerCase().includes(q)
+      ) : posts);
+    });
+  }
+
+  renderPosts(posts);
+}
+
+function renderPosts(posts) {
+  const list = document.getElementById('post-list');
+  if (!list) return;
+
+  if (!posts.length) {
+    list.innerHTML = `<div class="search-no-results">No writings found.</div>`;
+    return;
+  }
+
   list.innerHTML = posts.map(p => `
     <a class="post-card" href="post.html?id=${p.id}">
       ${p.cover ? `<div class="post-cover-wrap"><img class="post-cover" src="${p.cover}" alt=""></div>` : ''}

@@ -104,6 +104,40 @@ blockquote {
 .site-nav a { color: var(--muted); transition: color .18s; }
 .site-nav a:hover { color: var(--ink); opacity: 1; }
 
+/* ── Search ── */
+.search-wrap {
+  padding: 2rem 0 0;
+  max-width: 420px;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: .7rem 1rem .7rem 2.6rem;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: .9rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color .18s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239a9690' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: .75rem center;
+}
+
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--muted); }
+
+.search-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: .9rem;
+}
+
 /* ── Post List (3-column board) ── */
 .post-list {
   padding: 3rem 0;
