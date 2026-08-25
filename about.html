@@ -7,47 +7,159 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #ffffff;
+      --paper: #f0f3f7;
+      --ink:   #1a2035;
+      --muted: #7a8499;
+      --gold:  #4a7eb5;
+      --rule:  #dde3ec;
+      --serif: 'EB Garamond', Georgia, serif;
+      --sans:  'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--serif);
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 1.5rem;
+      background: #232e48;
+      border-bottom: 1px solid #2c3a55;
+      font-family: var(--sans);
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: #8aadd4;
+      text-decoration: none;
+      transition: color .18s;
+    }
+
+    nav a:hover { color: #f0f4fa; }
+
+    /* ── Hero ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10rem 2rem 9rem;
+      background: linear-gradient(135deg, #0f1628 0%, #1a2035 50%, #1e3a5f 100%);
+      position: relative;
+      border-bottom: 1px solid #2c3a55;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 2px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 400;
+      letter-spacing: .04em;
+      color: #f0f4fa;
+      line-height: 1.08;
+    }
+
+    .hero-tagline {
+      font-family: var(--sans);
+      font-size: .72rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: #7a9ec4;
+      margin-top: 1.75rem;
+    }
+
+    /* ── Section ── */
+    .section { max-width: 960px; margin: 0 auto; padding: 5rem 1.5rem; }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .about-body {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      max-width: 640px;
+    }
+
+    .about-body p { margin-bottom: 1.4em; }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title"><a href="index.html" style="color:inherit;">God Revealing God</a></h1>
-      <p class="site-tagline">through His Word, by His Spirit, for His glory</p>
-    </div>
-  </header>
-
-  <nav class="site-nav">
-    <a href="index.html">Writings</a>
+  <!-- Nav -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://godrevealinggod.substack.com" target="_blank" rel="noopener">Blog</a>
     <a href="about.html">About</a>
   </nav>
 
-  <main class="container" style="padding: 3rem 0 5rem;">
-    <a class="back-link" href="index.html">&#8592; Writings</a>
-    <h1 style="margin-bottom:1.5rem;">About This Site</h1>
-    <div class="post-body about-intro">
-      <p>
-        We believe God reveals Himself through His Word, by His Spirit, and for His glory.
-      </p>
-<p>
-        Our prayer is that, as you read these blog posts, God would reveal more of Himself to you.
-      </p>
-      <p>
-        God bless you.
-      </p>
-      <p>
-        <em>Soli Deo Gloria.</em>
-      </p>
-    </div>
-  </main>
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="hero-title">God Revealing God</h1>
+    <p class="hero-tagline">through His Word, by His Spirit, for His glory</p>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>God Revealing God</p>
+  <!-- About -->
+  <div class="section">
+    <div class="section-label">About</div>
+    <div class="about-body">
+      <p>We believe God reveals Himself through His Word, by His Spirit, and for His glory.</p>
+      <p>Our prayer is that, as you read these blog posts, God would reveal more of Himself to you.</p>
+      <p>God bless you.</p>
+      <p><em>Soli Deo Gloria.</em></p>
     </div>
-  </footer>
+  </div>
 
-  <script src="app.js"></script>
+  <footer>God Revealing God</footer>
+
 </body>
 </html>
