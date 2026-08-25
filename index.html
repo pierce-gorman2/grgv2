@@ -11,12 +11,12 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #f2f0ed;
-      --paper: #e9e6e1;
-      --ink:   #28231e;
-      --muted: #918c85;
-      --gold:  #9e7f4a;
-      --rule:  #dcd8d2;
+      --cream: #ffffff;
+      --paper: #f0f3f7;
+      --ink:   #1a2035;
+      --muted: #7a8499;
+      --gold:  #4a7eb5;
+      --rule:  #dde3ec;
       --serif: 'EB Garamond', Georgia, serif;
       --sans:  'Inter', system-ui, sans-serif;
     }
@@ -34,8 +34,8 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 1.5rem;
-      background: var(--paper);
-      border-bottom: 1px solid var(--rule);
+      background: #232e48;
+      border-bottom: 1px solid #2c3a55;
       font-family: var(--sans);
       font-size: .75rem;
       letter-spacing: .12em;
@@ -43,12 +43,12 @@
     }
 
     nav a {
-      color: var(--muted);
+      color: #8aadd4;
       text-decoration: none;
       transition: color .18s;
     }
 
-    nav a:hover { color: var(--ink); }
+    nav a:hover { color: #f0f4fa; }
 
     /* ── Hero ── */
     .hero {
@@ -58,9 +58,9 @@
       justify-content: center;
       text-align: center;
       padding: 10rem 2rem 9rem;
-      background: #e9e6e1;
+      background: #1a2035;
       position: relative;
-      border-bottom: 1px solid #d5dce8;
+      border-bottom: 1px solid #2c3a55;
     }
 
     .hero::after {
@@ -76,7 +76,7 @@
       font-size: clamp(2.8rem, 8vw, 5.5rem);
       font-weight: 400;
       letter-spacing: .04em;
-      color: #1a2033;
+      color: #f0f4fa;
       line-height: 1.08;
     }
 
@@ -85,7 +85,7 @@
       font-size: .72rem;
       letter-spacing: .26em;
       text-transform: uppercase;
-      color: #8a7a5a;
+      color: #7a9ec4;
       margin-top: 1.75rem;
     }
 
@@ -147,10 +147,10 @@
       display: inline-block;
       font-family: var(--sans);
       font-size: .8rem;
-      color: var(--gold);
+      color: #3b6ea5;
       text-decoration: none;
       letter-spacing: .04em;
-      border-bottom: 1px solid var(--gold);
+      border-bottom: 1px solid #3b6ea5;
       padding-bottom: 1px;
       transition: opacity .18s;
     }

@@ -3,12 +3,12 @@
 
 :root {
   --cream:   #ffffff;
-  --paper:   #f7f5f2;
-  --ink:     #2c2c2c;
-  --muted:   #9a9690;
-  --accent:  #a07850;
-  --gold:    #c8a97a;
-  --rule:    #ede9e3;
+  --paper:   #f0f3f7;
+  --ink:     #1a2035;
+  --muted:   #7a8499;
+  --accent:  #3b6ea5;
+  --gold:    #4a7eb5;
+  --rule:    #dde3ec;
   --max:     1100px;
   --serif:   'EB Garamond', Georgia, serif;
   --sans:    'Inter', system-ui, sans-serif;
