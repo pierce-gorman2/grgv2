@@ -121,6 +121,39 @@
     .about-body p { margin-bottom: 1.4em; }
     .about-body p:last-child { margin-bottom: 0; }
 
+    /* ── Team ── */
+    .team-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .team-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,.1);
+    }
+
+    .team-name {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: .4rem;
+    }
+
+    .team-bio {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    @media (max-width: 480px) {
+      .team-card { flex-direction: column; align-items: center; text-align: center; }
+    }
+
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--rule);
@@ -154,9 +187,20 @@
     <div class="section-label">About</div>
     <div class="about-body">
       <p>We believe God reveals Himself through His Word, by His Spirit, and for His glory.</p>
-      <p>Our prayer is that, as you read these blog posts, God would reveal more of Himself to you.</p>
+      <p>Our prayer is that, as you read, watch, or listen to the content we produce, that God would reveal more of Himself to you.</p>
       <p>God bless you.</p>
-      <p><em>Soli Deo Gloria.</em></p>
+      <p><em>Soli Deo Gloria,</em><br>GRG Team</p>
+    </div>
+
+    <div class="team-section">
+      <div class="section-label" style="margin-top: 4rem;">Meet the GRG Team</div>
+      <div class="team-card">
+        <img class="team-photo" src="pierce.png" alt="Pierce">
+        <div class="team-info">
+          <h2 class="team-name">Pierce</h2>
+          <p class="team-bio">Bio coming soon.</p>
+        </div>
+      </div>
     </div>
   </div>
 
